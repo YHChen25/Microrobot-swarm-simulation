@@ -8,9 +8,9 @@ This repository contains the code associated with our manuscript:
 
 ## Overview
 
-Microrobot swarms exhibit complex collective behaviors that enable applications such as targeted delivery and micromanipulation. However, learning such behaviors in physical systems is challenging due to limited data availability and experimental constraints.
+Microrobot swarms exhibit complex collective behaviors that enable applications such as targeted delivery and micromanipulation. However, learning such behaviors in physical systems is challenging due to strong inter-particle interactions, environmental disturbances, and limited access to scalable training data.
 
-This repository provides a high-fidelity simulation platform for learning microrobot swarm behaviors and control, together with demonstration code for training and deployment.
+This repository provides a high-fidelity simulation platform for learning microrobot swarm behaviors and control, along with demonstration code for training and deployment.
 
 ---
 
@@ -22,7 +22,7 @@ However, we provide:
 
 - Simulation environments for reproducible experiments
 - Reinforcement learning training scripts
-- Demonstration code for deployment policies
+- Pre-trained models and deployment examples
 
 These components allow users to reproduce the learning process and evaluate trained policies in simulation.
 
@@ -32,12 +32,13 @@ These components allow users to reproduce the learning process and evaluate trai
 
 - Python 3.8+
 - Windows / Linux
-- Unity3D (for simulation environment)
+- Unity3D
 
 Install dependencies:
-
 ```bash
 pip install -r requirements.txt
+```
+---
 
 ## Sections
 
@@ -45,12 +46,48 @@ pip install -r requirements.txt
 2. Deployment_demo
 3. PID_demo
 
+---
+
 ### 1. Training_env
-This folder contains environment files for four types of tasks: delivery, navigation, slope_motion, and shape_control, along with corresponding reproducible training example scripts. After running the program, training log files and model files will be generated and saved in the automatically created logs_graghs and logs_models folders respectively.
+
+This folder contains simulation environments for four representative tasks:
+
+- delivery
+- navigation
+- slope_motion
+- shape_control
+
+It also includes corresponding training scripts for reproducible reinforcement learning experiments.
+
+After running the training programs, log files and trained models will be automatically generated and saved in:
+
+- `logs_graphs/` training curves and logs
+- `logs_models/` trained policy models
+
+---
 
 ### 2. Deployment_demo
-This folder provides test environments for the four tasks, pre-trained task models, and test example code. After execution, the trained models can be invoked to complete corresponding tasks, and a recorded output video will be generated automatically.
+
+This folder provides testing environments, pre-trained models, and example scripts for all four tasks.
+
+After execution, the trained models can be directly loaded to perform the corresponding tasks. The system will automatically generate recorded output videos demonstrating the swarm behaviors.
+
+---
 
 ### 3. PID_demo
-This folder includes PID control tests for 3D motion tasks, which serve as the baseline for comparison with reinforcement learning methods.
+
+This folder includes classical PID control experiments for 3D motion tasks.
+
+These experiments serve as a baseline for comparison with reinforcement learning-based control methods.
+
+---
+
+## Simulation Environment
+
+The simulation environment is developed in Unity3D and models:
+
+- Inter-particle interactions
+- Swarm-environment coupling
+- Collective swarm dynamics
+
 
