@@ -38,3 +38,19 @@ Install dependencies:
 
 ```bash
 pip install -r requirements.txt
+
+## Sections
+
+1. Training_env
+2. Deployment_demo
+3. PID_demo
+
+### 1. Training_env
+This folder contains environment files for four types of tasks: delivery, navigation, slope_motion, and shape_control, along with corresponding reproducible training example scripts. After running the program, training log files and model files will be generated and saved in the automatically created logs_graghs and logs_models folders respectively.
+
+### 2. Deployment_demo
+This folder provides test environments for the four tasks, pre-trained task models, and test example code. After execution, the trained models can be invoked to complete corresponding tasks, and a recorded output video will be generated automatically.
+
+### 3. PID_demo
+This folder includes PID control tests for 3D motion tasks, which serve as the baseline for comparison with reinforcement learning methods.
+
